@@ -1,55 +1,9 @@
 import Image from "next/image";
-import Illustration from "@/public/images/page-illustration.svg";
-import BlurredShapeGray from "@/public/images/blurred-shape-gray.svg";
-import BlurredShape from "@/public/images/blurred-shape.svg";
 
-export default function PageIllustration({
-  multiple = false,
-}: {
-  multiple?: boolean;
-}) {
+export default function PageIllustration() {
   return (
-    <>
-      <div
-        className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/4"
-        aria-hidden="true"
-      >
-        <Image
-          className="max-w-none"
-          src={Illustration}
-          width={846}
-          height={594}
-          alt="Page illustration"
-        />
-      </div>
-      {multiple && (
-        <>
-          <div
-            className="pointer-events-none absolute left-1/2 top-[400px] -z-10 -mt-20 -translate-x-full opacity-50"
-            aria-hidden="true"
-          >
-            <Image
-              className="max-w-none"
-              src={BlurredShapeGray}
-              width={760}
-              height={668}
-              alt="Blurred shape"
-            />
-          </div>
-          <div
-            className="pointer-events-none absolute left-1/2 top-[440px] -z-10 -translate-x-1/3"
-            aria-hidden="true"
-          >
-            <Image
-              className="max-w-none"
-              src={BlurredShape}
-              width={760}
-              height={668}
-              alt="Blurred shape"
-            />
-          </div>
-        </>
-      )}
-    </>
+    <div className="pointer-events-none absolute left-1/2 top-0 -z-10 -ml-16 -mt-16 h-[800px] w-[800px] opacity-50">
+      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500/20 to-indigo-600/20 blur-3xl" />
+    </div>
   );
 }
