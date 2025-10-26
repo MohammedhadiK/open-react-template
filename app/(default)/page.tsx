@@ -1,11 +1,11 @@
 export const metadata = {
-  title: "WEFI Institute - Empowering Education, Enriching Futures",
-  description: "WEFI Institute is a premier educational hub offering comprehensive learning solutions, skill development programs, and academic excellence.",
+  title: "Home - Open PRO",
+  description: "Page description",
 };
 
 import PageIllustration from "@/components/page-illustration";
 import Hero from "@/components/hero-home";
-import Programs from "@/components/programs";
+import Workflows from "@/components/workflows";
 import Features from "@/components/features";
 import Testimonials from "@/components/testimonials";
 import Cta from "@/components/cta";
@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <PageIllustration />
       <Hero />
-      <Programs />
+      <Workflows />
       <Features />
       <Testimonials />
       <Cta />
