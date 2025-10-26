@@ -1,44 +1,18 @@
 import Image from "next/image";
-import Illustration from "@/public/images/page-illustration.svg";
-import BlurredShapeGray from "@/public/images/blurred-shape-gray.svg";
-import BlurredShape from "@/public/images/blurred-shape.svg";
 
-export default function PageIllustration({
-  multiple = false,
-}: {
-  multiple?: boolean;
-}) {
+// Simple gradient background component
+const EducationBackground = () => (
+  <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 to-indigo-800" />
+    <div className="absolute left-1/2 top-0 -ml-[39%] h-full w-[113%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-500/20 to-transparent" />
+  </div>
+);
+
+export default function PageIllustration() {
   return (
-    <>
-      <div
-        className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/4"
-        aria-hidden="true"
-      >
-        <Image
-          className="max-w-none"
-          src={Illustration}
-          width={846}
-          height={594}
-          alt="Page illustration"
-        />
-      </div>
-      {multiple && (
-        <>
-          <div
-            className="pointer-events-none absolute left-1/2 top-[400px] -z-10 -mt-20 -translate-x-full opacity-50"
-            aria-hidden="true"
-          >
-            <Image
-              className="max-w-none"
-              src={BlurredShapeGray}
-              width={760}
-              height={668}
-              alt="Blurred shape"
-            />
-          </div>
-          <div
-            className="pointer-events-none absolute left-1/2 top-[440px] -z-10 -translate-x-1/3"
-            aria-hidden="true"
+    <div className="pointer-events-none absolute left-1/2 top-0 -z-10 -ml-16 -mt-16 h-[800px] w-[800px] opacity-50">
+      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500/20 to-indigo-600/20 blur-3xl" />
+    </div>
           >
             <Image
               className="max-w-none"
