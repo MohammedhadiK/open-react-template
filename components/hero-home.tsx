@@ -1,5 +1,4 @@
-import VideoThumb from "@/public/images/hero-image-01.jpg";
-import ModalVideo from "@/components/modal-video";
+// Video content removed
 
 export default function HeroHome() {
   return (
@@ -13,7 +12,7 @@ export default function HeroHome() {
               className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl"
               data-aos="fade-up"
             >
-              Empowering Education, Enriching Futures
+              Educational courses running live on WEFI institute
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
@@ -21,7 +20,7 @@ export default function HeroHome() {
                 data-aos="fade-up"
                 data-aos-delay={200}
               >
-                WEFI Institute is dedicated to providing quality education and skill development programs to shape the leaders of tomorrow.
+                Explore a wide range of courses and start your learning journey with us today.
               </p>
               <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
                 <div data-aos="fade-up" data-aos-delay={400}>
@@ -48,16 +47,6 @@ export default function HeroHome() {
               </div>
             </div>
           </div>
-
-          <ModalVideo
-            thumb={VideoThumb}
-            thumbWidth={1104}
-            thumbHeight={576}
-            thumbAlt="Modal video thumbnail"
-            video="videos//video.mp4"
-            videoWidth={1920}
-            videoHeight={1080}
-          />
         </div>
       </div>
     </section>
