@@ -43,7 +43,7 @@ export default function Features() {
           </h2>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
             We provide an exceptional learning experience with a focus on practical skills and career growth.
-          </p>
+          </h2>
         </div>
 
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
