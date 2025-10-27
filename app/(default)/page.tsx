@@ -18,7 +18,7 @@ export default function Home() {
       <Workflows />
       <Features />
       <Testimonials />
-      <Cta />
+      {/* <Cta /> */}
     </>
   );
 }

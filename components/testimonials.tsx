@@ -228,24 +228,15 @@ export function Testimonial({
         <p className="text-indigo-200/65 before:content-['“'] after:content-['”']">
           {children}
         </p>
-        <div className="flex items-center gap-3">
-          <Image
-            className="inline-flex shrink-0 rounded-full"
-            src={testimonial.img}
-            width={36}
-            height={36}
-            alt={testimonial.name}
-          />
-          <div className="text-sm font-medium text-gray-200">
-            <span>{testimonial.name}</span>
-            <span className="text-gray-700"> - </span>
-            <a
-              className="text-indigo-200/65 transition-colors hover:text-indigo-500"
-              href="#0"
-            >
-              {testimonial.company}
-            </a>
-          </div>
+        <div className="text-sm font-medium text-gray-200">
+          <span>{testimonial.name}</span>
+          <span className="text-gray-700"> - </span>
+          <a
+            className="text-indigo-200/65 transition-colors hover:text-indigo-500"
+            href="#0"
+          >
+            {testimonial.company}
+          </a>
         </div>
       </div>
     </article>
