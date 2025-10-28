@@ -1,25 +1,15 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import { ChangeEvent, FormEvent, useMemo, useState } from "react";
 
+import { Course } from "./courses-data";
 import WefiUpiQrCode from "@/public/images/wefi_upi_qr_code.jpeg";
-
-type Course = {
-  title: string;
-  description: string;
-  startDate: string;
-  schedule: string;
-  duration: string;
-  mode: string;
-  mentors: string[];
-  payment: {
-    amount: string;
-  };
-};
 
 type CourseEnrollmentGridProps = {
   courses: Course[];
+  showDetailLink?: boolean;
 };
 
 type CourseFormValues = {
@@ -42,7 +32,10 @@ const createInitialFormState = (): CourseFormValues => ({
   screenshot: null,
 });
 
-export default function CourseEnrollmentGrid({ courses }: CourseEnrollmentGridProps) {
+export default function CourseEnrollmentGrid({
+  courses,
+  showDetailLink = false,
+}: CourseEnrollmentGridProps) {
   const [activeCourse, setActiveCourse] = useState<string | null>(null);
   const [formSteps, setFormSteps] = useState<Record<string, number>>(() =>
     Object.fromEntries(courses.map((course) => [course.title, 1]))
@@ -218,6 +211,26 @@ export default function CourseEnrollmentGrid({ courses }: CourseEnrollmentGridPr
                 </svg>
               </button>
             </div>
+            {showDetailLink && (
+              <div className="pt-3">
+                <Link
+                  href={`/courses/${course.slug}`}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-200 transition duration-300 hover:text-white"
+                >
+                  View course details
+                  <svg
+                    className="h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              </div>
+            )}
             {submittedCourse === course.title && (
               <p className="pt-4 text-sm font-medium text-emerald-300">
                 Enrollment submitted. We will reach out soon with next steps.
